@@ -22,8 +22,7 @@
     <nav class="sidebar">
         <ul>
             <li>Principal</li>
-            <li>Ficción</li>
-            <li>No Ficción</li>
+            <li>Categorias</li>
             <li>Recomendados</li>
             <li>Favoritos</li>
             <li>Historial</li>
