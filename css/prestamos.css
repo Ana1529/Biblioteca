@@ -1,0 +1,68 @@
+.prestamos {
+    display: none; /* Oculta la sección por defecto */
+    position: fixed; /* Mantiene la sección en una posición fija */
+    bottom: 0; /* Coloca la sección en la parte inferior */
+    left: 50%; /* Posiciona la sección en el centro horizontal */
+    transform: translateX(-50%); /* Ajusta el desplazamiento para centrarla */
+    padding: 20px;
+    background-color: #f9f9f9; /* Fondo claro para la sección */
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 8px; /* Bordes redondeados */
+    margin-top: 20px; /* Espacio arriba de la sección */
+}
+
+.prestamos h1 {
+    font-size: 24px;
+    color: #333; /* Color del texto */
+    margin-bottom: 20px; /* Espacio abajo del título */
+}
+
+.prestamos table {
+    width: 100%; /* Ancho completo */
+    border-collapse: collapse; /* Colapsar bordes de la tabla */
+    margin-top: 10px; /* Espacio arriba de la tabla */
+}
+
+.prestamos th, .prestamos td {
+    padding: 10px; /* Espacio interno */
+    text-align: left; /* Alinear texto a la izquierda */
+    border-bottom: 1px solid #ddd; /* Borde inferior para las filas */
+}
+
+.prestamos th {
+    background-color: #f2f2f2; /* Color de fondo de los encabezados */
+    color: #555; /* Color del texto de los encabezados */
+}
+
+.prestamos tr:hover {
+    background-color: #f1f1f1; /* Color de fondo al pasar el mouse sobre las filas */
+}
+
+.prestamos form {
+    margin-top: 20px; /* Espacio arriba del formulario */
+}
+
+.prestamos label {
+    display: block; /* Mostrar etiquetas como bloques */
+    margin-bottom: 5px; /* Espacio abajo de las etiquetas */
+}
+
+.prestamos input[type="number"],
+.prestamos input[type="submit"] {
+    padding: 10px; /* Espacio interno */
+    border: 1px solid #ccc; /* Borde de los inputs */
+    border-radius: 4px; /* Bordes redondeados */
+    width: 100%; /* Ancho completo */
+    margin-bottom: 10px; /* Espacio abajo de los inputs */
+}
+
+.prestamos input[type="submit"] {
+    background-color: #007bff; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    cursor: pointer; /* Cursor tipo puntero para el botón */
+    border: none; /* Sin borde */
+}
+
+.prestamos input[type="submit"]:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse sobre el botón */
+}

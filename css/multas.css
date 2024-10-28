@@ -1,0 +1,57 @@
+.multas {
+    display: none; /* Oculta la sección por defecto */
+    position: fixed;  /*Mantiene la sección en una posición fija */
+    bottom: 0; /* Coloca la sección en la parte inferior */
+    left: 50%; /* Posiciona la sección en el centro horizontal */
+    transform: translateX(-50%); /* Ajusta el desplazamiento para centrarla */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 20px;
+    height: 300px;
+    width: 90%;
+}
+
+.multas h1 {
+    color: #333;
+}
+
+.multas table {
+    width: 80%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.multas th, .multas td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.multas th {
+    background-color: #f2f2f2;
+}
+
+.multas tr:hover {
+    background-color: #f1f1f1;
+}
+
+.multas form {
+    margin-top: 20px;
+}
+
+.multas input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.multas input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.multas input[type="submit"]:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}

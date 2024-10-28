@@ -62,6 +62,7 @@ $result_categorias = $conn->query($sql_categorias);
     <link rel="stylesheet" href="css/styles.css"> <!-- Asegúrate de tener un CSS atractivo -->
 </head>
 <body>
+    <!---->
     <h1>Bienvenido, <?php echo htmlspecialchars($_SESSION['usuario']['nombre']); ?> (Administrador)</h1>
 
     <?php if ($message): ?>

@@ -1,0 +1,50 @@
+.devoluciones {
+    display: none; /* Oculta la sección por defecto */
+    position: fixed; /* Mantiene la sección en una posición fija */
+    bottom: 0; /* Coloca la sección en la parte inferior */
+    left: 50%; /* Posiciona la sección en el centro horizontal */
+    transform: translateX(-50%); /* Ajusta el desplazamiento para centrarla */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.devoluciones h1 {
+    color: #333;
+}
+
+.devoluciones table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.devoluciones th, .devoluciones td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.devoluciones th {
+    background-color: #f2f2f2;
+}
+
+.devoluciones tr:hover {
+    background-color: #f1f1f1;
+}
+
+.devoluciones form {
+    margin-top: 20px;
+}
+
+.devoluciones input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.devoluciones input[type="submit"]:hover {
+    background-color: #0056b3;
+}

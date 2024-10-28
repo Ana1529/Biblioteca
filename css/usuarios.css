@@ -1,0 +1,66 @@
+.usuarios {
+    display: none; /* Oculta la sección por defecto */
+    position: fixed; /* Mantiene la sección en una posición fija */
+    bottom: 0; /* Coloca la sección en la parte inferior */
+    left: 50%; /* Posiciona la sección en el centro horizontal */
+    transform: translateX(-50%); /* Ajusta el desplazamiento para centrarla */
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.usuarios h1, .usuarios h2 {
+    color: #333;
+}
+
+.usuarios table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.usuarios th, .usuarios td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.usuarios th {
+    background-color: #f2f2f2;
+}
+
+.usuarios tr:hover {
+    background-color: #f1f1f1;
+}
+
+.usuarios form {
+    margin-top: 20px;
+}
+
+.usuarios label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.usuarios input[type="text"],
+.usuarios input[type="email"],
+.usuarios select,
+.usuarios input[type="submit"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.usuarios input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+.usuarios input[type="submit"]:hover {
+    background-color: #0056b3;
+}
