@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <div class="container">
         <div class="welcome-section">
-        <img src="img/6.png" alt="Bienvenido" class="welcome-image">
+        <img src="img/7.jpeg" alt="Bienvenido" class="welcome-image">
         </div>
         <div class="login-section">
             <form action="login.php" method="POST">
