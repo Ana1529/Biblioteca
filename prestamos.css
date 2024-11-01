@@ -1,0 +1,213 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Encabezado */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #9FA8B7;
+    padding: 10px 350px;
+    color: white;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.logo img {
+    border-radius: 50%;
+    width: 100px;
+    height: auto;
+}
+
+nav {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
+}
+
+.nav-links a:hover {
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Barra de búsqueda (si es necesaria) */
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input[type="text"] {
+    padding: 5px;
+    border: none;
+    border-radius: 3px;
+    width: 200px;
+}
+
+.search-bar button {
+    background-color: #555;
+    border: none;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+/* Título principal */
+h1 {
+    color: black;
+    margin-bottom: 20px;
+}
+
+/* Formulario de registro de préstamo */
+
+form {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    color: #203543;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+   
+}
+
+form input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Tabla de préstamos activos */
+table {
+    width: 100%;
+    max-width: 800px;
+    border-collapse: collapse;
+    background-color: #fff;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #c9d3df;
+    color: black;
+}
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+button[type="submit"] {
+    background-color: #ece4e2de;
+    color: black;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #ECE4E2;
+}
+
+
+
+/* Pie de página */
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    align-items: center; /* Alinea verticalmente los elementos en el centro */
+    padding: 10px 448px; 
+    background-color: #9FA8B7  ;
+}
+
+
+.social-media {
+    margin-right: 400px; /* Ajusta este valor si necesitas más espacio a la derecha */
+    flex: 1; /* Para permitir que el espacio se distribuya mejor */
+}
+
+.footer-bottom {
+    text-align: center; 
+    margin-top: 10px; /* Espacio entre los elementos y el pie de página */
+}
+
+/*Redes sociales*/
+.social-media {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-media a {
+    color: #203543; 
+    font-size: 24px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: white; /* Cambia el color de hover */
+}
