@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // Redirigir según el rol del usuario
             switch ($usuario['id_roles']) { 
                 case 1: // Administrador
-                    header("Location: admin.php");
+                    header("Location: administrador.php");
                     exit();
                 case 3: // Cliente
                     header("Location: index.php");

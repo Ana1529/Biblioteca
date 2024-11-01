@@ -5,9 +5,10 @@ $conn = new mysqli('localhost', 'root', '', 'biblioteca');
 if ($conn->connect_error) {
     die("Conexión fallida: " . $conn->connect_error);
 }
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+error_reporting(E_ALL); 
 
 session_start(); 
 if (!isset($_SESSION['usuario'])) {
@@ -16,8 +17,12 @@ if (!isset($_SESSION['usuario'])) {
 }
 
 if ($_SESSION['usuario']['id_roles'] != 1) {
-    echo "Acceso denegado. Solo los administradores pueden acceder a esta página.";
-    exit();
+    die("Acceso denegado. Solo los administradores pueden acceder a esta página.");
+}
+
+// Función para manejar errores
+function handleError($stmt) {
+    return "Error: " . $stmt->error;
 }
 
 // Manejo de registro de nuevos usuarios
@@ -26,25 +31,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['registrar_usuario']))
     $apellido = trim($_POST['apellido']);
     $email = trim($_POST['email']);
     $telefono = trim($_POST['telefono']);
-    $rol = $_POST['rol'];
+    $rol = (int)$_POST['rol'];
 
     if (!empty($nombre) && !empty($email) && !empty($rol)) {
-        $stmt = $conn->prepare("INSERT INTO usuarios (nombre, apellido, email, telefono, id_roles) VALUES (?, ?, ?, ?, ?)");
-        $stmt->bind_param("ssssi", $nombre, $apellido, $email, $telefono, $rol);
-        
-        if ($stmt->execute()) {
-            echo "Usuario registrado correctamente.";
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            echo "Email no válido.";
         } else {
-            echo "Error al registrar el usuario: " . $stmt->error;
-        }
+            $stmt = $conn->prepare("INSERT INTO usuarios (nombre, apellido, email, telefono, id_roles) VALUES (?, ?, ?, ?, ?)");
+            $stmt->bind_param("ssssi", $nombre, $apellido, $email, $telefono, $rol);
+            
+            if ($stmt->execute()) {
+                echo "Usuario registrado correctamente.";
+            } else {
+                echo handleError($stmt);
+            }
 
-        $stmt->close();
+            $stmt->close();
+        }
+    } else {
+        echo "Todos los campos son obligatorios.";
     }
 }
 
 // Manejo de eliminación de usuarios
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['eliminar'])) {
-    $id_usuario = $_POST['id_usuario'];
+    $id_usuario = (int)$_POST['id_usuario'];
     
     $stmt = $conn->prepare("DELETE FROM usuarios WHERE id_usuario = ?");
     $stmt->bind_param("i", $id_usuario);
@@ -52,74 +63,63 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['eliminar'])) {
     if ($stmt->execute()) {
         echo "Usuario eliminado correctamente.";
     } else {
-        echo "Error al eliminar el usuario: " . $stmt->error;
+        echo handleError($stmt);
     }
 
     $stmt->close();
 }
 
-
 // Añadir un libro
-$message = '';
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['añadir_libro'])) {
     $titulo = trim($_POST['titulo']);
     $autor = trim($_POST['autor']);
-    $categoria = $_POST['categoria'];
+    $categoria = (int)$_POST['categoria'];
 
-    // Verificar que no haya campos vacíos
     if (!empty($titulo) && !empty($autor) && !empty($categoria)) {
         $stmt = $conn->prepare("INSERT INTO libros (titulo, autor, id_categoria) VALUES (?, ?, ?)");
         $stmt->bind_param("ssi", $titulo, $autor, $categoria);
         
         if ($stmt->execute()) {
-            $message = "Libro añadido correctamente.";
+            echo "Libro añadido correctamente.";
         } else {
-            $message = "Error al añadir el libro: " . $stmt->error;
+            echo handleError($stmt);
         }
 
         $stmt->close();
     } else {
-        $message = "Todos los campos son obligatorios.";
+        echo "Todos los campos son obligatorios.";
     }
 }
 
-// Obtener lista de usuarios
-$sql = "SELECT id_usuario, nombre, email FROM usuarios";
-$result = $conn->query($sql);
-
-// Obtener lista de categorías
-$sql_categorias = "SELECT id_categoria, nombre FROM categorias";
-$result_categorias = $conn->query($sql_categorias);
-
 // Registrar nuevo préstamo
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['nuevo_prestamo'])) {
-    $id_usuario = $_POST['id_usuario'];
-    $id_libro = $_POST['id_libro'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['nuevo_prestamo'])) {
+    $id_usuario = (int)$_POST['id_usuario'];
+    $id_libro = (int)$_POST['id_libro'];
     $fecha_prestamo = date('Y-m-d');
-    $sql = "INSERT INTO prestamos (id_usuario, id_libro, fecha_prestamo) VALUES (?, ?, ?)";
-    $stmt = $conn->prepare($sql);
+
+    $stmt = $conn->prepare("INSERT INTO prestamos (id_usuario, id_libro, fecha_prestamo) VALUES (?, ?, ?)");
     $stmt->bind_param("iis", $id_usuario, $id_libro, $fecha_prestamo);
     
     if ($stmt->execute()) {
         echo "Nuevo préstamo registrado exitosamente.";
     } else {
-        echo "Error: " . $stmt->error;
+        echo handleError($stmt);
     }
 
     $stmt->close();
 }
 
 // Devolver libro
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['devolver_libro'])) {
-    $id_prestamo = $_POST['id_prestamo'];
-    $sql = "UPDATE prestamos SET devuelto = TRUE, fecha_devolucion = CURDATE() WHERE id_prestamo = ?";
-    $stmt = $conn->prepare($sql);
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['devolver_libro'])) {
+    $id_prestamo = (int)$_POST['id_prestamo'];
+
+    $stmt = $conn->prepare("UPDATE prestamos SET devuelto = TRUE, fecha_devolucion = CURDATE() WHERE id_prestamo = ?");
     $stmt->bind_param("i", $id_prestamo);
     
     if ($stmt->execute()) {
         echo "Libro devuelto exitosamente.";
     } else {
-        echo "Error: " . $stmt->error;
+        echo handleError($stmt);
     }
 
     $stmt->close();
@@ -132,26 +132,9 @@ $sql_prestamos = "SELECT p.id_prestamo, u.nombre, l.titulo, p.fecha_prestamo, p.
                   JOIN libros l ON p.id_libro = l.id_libro";
 $result_prestamos = $conn->query($sql_prestamos);
 
-// Manejo de devoluciones de libros
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['devolver'])) {
-    $id_prestamo = $_POST['id_prestamo'];
-    $fecha_devolucion = date('Y-m-d'); // Fecha actual
-
-    $stmt = $conn->prepare("UPDATE prestamos SET devuelto = TRUE, fecha_devolucion = ? WHERE id_prestamo = ?");
-    $stmt->bind_param("si", $fecha_devolucion, $id_prestamo);
-    
-    if ($stmt->execute()) {
-        echo "Devolución registrada correctamente.";
-    } else {
-        echo "Error al registrar la devolución: " . $stmt->error;
-    }
-
-    $stmt->close();
-}
-
 // Manejo de pago de multas
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['pagar'])) {
-    $id_multa = $_POST['id_multa'];
+    $id_multa = (int)$_POST['id_multa'];
 
     $stmt = $conn->prepare("UPDATE multas SET estado = TRUE WHERE id_multa = ?");
     $stmt->bind_param("i", $id_multa);
@@ -159,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['pagar'])) {
     if ($stmt->execute()) {
         echo "Pago registrado correctamente.";
     } else {
-        echo "Error al registrar el pago: " . $stmt->error;
+        echo handleError($stmt);
     }
 
     $stmt->close();
@@ -171,13 +154,11 @@ $data = json_decode(file_get_contents('php://input'), true);
 if (isset($data['title'], $data['author'], $data['year'], $data['genre'])) {
     $titulo = trim($data['title']);
     $autor = trim($data['author']);
-    $anio_publicacion = $data['year'];
+    $anio_publicacion = (int)$data['year'];
     $genero = trim($data['genre']);
-
-    $stmt = $conn->prepare("INSERT INTO libros (titulo, autor, anio_publicacion, id_categoria) VALUES (?, ?, ?, ?)");
-    // Asegúrate de tener la lógica para el id_categoria si lo necesitas
     $id_categoria = 1; // Cambia esto según tu lógica de categorías
 
+    $stmt = $conn->prepare("INSERT INTO libros (titulo, autor, anio_publicacion, id_categoria) VALUES (?, ?, ?, ?)");
     $stmt->bind_param("ssii", $titulo, $autor, $anio_publicacion, $id_categoria);
 
     if ($stmt->execute()) {
@@ -192,9 +173,8 @@ if (isset($data['title'], $data['author'], $data['year'], $data['genre'])) {
 }
 
 $conn->close();
-
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="es">
@@ -250,14 +230,7 @@ $conn->close();
             <div class="card" onclick="showSection('devoluciones')">Devoluciones</div>
             <div class="card" onclick="showSection('multas')">Multas</div>
             <div class="card" id="add-book-btn" onclick="showSection('añadir_libro')">Añadir Libro</div>
-                <!--<div class="card">Usuarios</div>
-                <div class="card">Libros</div>
-                <div class="card">Autor</div>
-                <div class="card">Editorial</div>
-                <div class="card">Préstamos</div>
-                <div class="card" onclick="showSection('prestamos')">Préstamos</div>
-                 Quitar el enlace y solo usar el div con id -->
-                <!--<div class="card" id="add-book-btn">Añadir Libro</div>-->
+    
             
         </section>
 
