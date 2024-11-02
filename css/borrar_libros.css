@@ -1,0 +1,91 @@
+:root {
+    --primary-color: #203543; /* Color */
+    --hover-color: #E8E7E3; /* Color al pasar el mouse */
+    --border-color: #ccc; /* Color del borde */
+    --background-color: #f9f9f9; /* Color de fondo */
+    --text-color: #333; /* Color del texto */
+    --border-radius: 5px; /* Radio de borde */
+    --padding: 15px; /* Espaciado interno */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #9FA8B7 ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Altura completa de la ventana */
+    margin: 0; /* Eliminar margen por defecto */
+}
+
+
+form {
+    background-color: #f9f9f9; /* Color de fondo de las tarjetas */
+    background: linear-gradient(to left, transparent 10%, #ECE4E2 100%);
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    width: 300px; /* Ancho fijo */
+}
+
+h2 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 20px; /* Espacio debajo del título */
+}
+
+label {
+    display: block; /* Hacer que las etiquetas sean bloques */
+    margin-bottom: 5px; /* Espacio debajo de las etiquetas */
+    color: var(--text-color);
+}
+
+input[type="text"] {
+    width: calc(100% - 20px); /* Ancho total menos el padding */
+    padding: 10px;
+    margin-bottom: 15px; /* Espacio entre los campos */
+    border: 1px solid var(--border-color); /* Borde del campo */
+    border-radius: var(--border-radius);
+    transition: border-color 0.3s ease; /* Transición suave */
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary-color); /* Color del borde al enfocar */
+}
+
+input[type="submit"] {
+    background-color: var(--primary-color); /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambia el cursor al pasar */
+    font-size: 16px; /* Tamaño de fuente */
+    padding: 12px; /* Padding para aumentar el tamaño */
+    border-radius: var(--border-radius);
+    transition: background-color 0.3s; /* Transición suave para el cambio de color */
+    width: 100%; /* Ancho completo del botón */
+}
+
+input[type="submit"]:hover {
+    background-color: var(--hover-color); /* Color al pasar el mouse */
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between; /* Espacio entre los botones */
+    margin-top: 20px; /* Espacio encima del grupo de botones */
+}
+
+.btn-volver {
+    padding: 12px 20px; /* Aumentar el padding */
+    background-color: var(--primary-color); /* Color del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: var(--border-radius);
+    cursor: pointer; /* Cambiar a cursor de puntero */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.btn-volver:hover {
+    background-color: var(--hover-color); /* Color al pasar el mouse */
+} 

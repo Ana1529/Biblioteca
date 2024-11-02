@@ -1,66 +1,73 @@
-.usuarios {
-    display: none; /* Oculta la sección por defecto */
-    position: fixed; /* Mantiene la sección en una posición fija */
-    bottom: 0; /* Coloca la sección en la parte inferior */
-    left: 50%; /* Posiciona la sección en el centro horizontal */
-    transform: translateX(-50%); /* Ajusta el desplazamiento para centrarla */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
     padding: 20px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    margin-top: 20px;
 }
 
-.usuarios h1, .usuarios h2 {
+h1 {
+    text-align: center;
     color: #333;
+    margin-bottom: 20px;
 }
 
-.usuarios table {
+table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
+    margin: 20px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-.usuarios th, .usuarios td {
-    padding: 10px;
+th, td {
+    padding: 12px;
     text-align: left;
     border-bottom: 1px solid #ddd;
+    font-size: 16px;
 }
 
-.usuarios th {
-    background-color: #f2f2f2;
+th {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 
-.usuarios tr:hover {
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
     background-color: #f1f1f1;
 }
 
-.usuarios form {
-    margin-top: 20px;
+tr:last-child td {
+    border-bottom: none;
 }
 
-.usuarios label {
-    display: block;
-    margin-bottom: 5px;
+td {
+    color: #555;
 }
 
-.usuarios input[type="text"],
-.usuarios input[type="email"],
-.usuarios select,
-.usuarios input[type="submit"] {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    width: 100%;
-    margin-bottom: 10px;
+/* Estilo para el contenedor de la tabla */
+.table-container {
+    max-width: 1000px;
+    margin: auto;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.usuarios input[type="submit"] {
-    background-color: #007bff;
+/* Estilo para el encabezado de la tabla */
+.table-header {
+    background: #007bff;
     color: white;
-    cursor: pointer;
 }
 
-.usuarios input[type="submit"]:hover {
-    background-color: #0056b3;
+/* Estilo para el mensaje de "No hay usuarios registrados." */
+.no-users {
+    text-align: center;
+    padding: 20px;
+    color: #999;
+    font-style: italic;
 }

@@ -1,0 +1,45 @@
+.container {
+    margin: 20px auto; /* Centra el contenedor */
+    max-width: 600px; /* Ancho máximo del formulario */
+}
+
+.row {
+    display: flex; /* Habilita flexbox para alinear elementos en la fila */
+    justify-content: space-between; /* Espacio entre los elementos */
+    margin-bottom: 15px; /* Espaciado entre filas */
+}
+
+label {
+    flex: 1; /* Permite que las etiquetas ocupen el mismo espacio */
+    margin-right: 10px; /* Espacio a la derecha de las etiquetas */
+}
+
+input[type="text"],
+input[type="number"],
+select,
+input[type="file"] {
+    flex: 2; /* Mayor espacio para los inputs */
+    padding: 5px; /* Relleno dentro de los inputs */
+}
+
+.button-group {
+    display: flex; /* Habilita flexbox para los botones */
+    justify-content: flex-start; /* Alinea los botones a la izquierda */
+    margin-top: 20px; /* Espacio superior para el grupo de botones */
+}
+
+.button-group input[type="submit"],
+.button-group button {
+    margin-right: 10px; /* Espaciado entre botones */
+    padding: 8px 12px; /* Relleno del botón */
+    background-color: #007BFF; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano */
+}
+
+.button-group input[type="submit"]:hover,
+.button-group button:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el mouse */
+}

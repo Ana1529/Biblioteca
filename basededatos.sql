@@ -40,6 +40,7 @@ CREATE TABLE prestamos (
     id_prestamo INT PRIMARY KEY AUTO_INCREMENT,
     id_usuario INT,
     id_libro INT,
+    titulo varchar(45), 
     fecha_prestamo DATE NOT NULL,
     fecha_devolucion DATE,
     devuelto BOOLEAN DEFAULT FALSE,
