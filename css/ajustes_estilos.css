@@ -1,0 +1,375 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+.logo img {
+    border-radius: 50%; 
+    width: 70px; 
+    height: auto; 
+}
+/* Estilos generales para el encabezado */
+header {
+    border-bottom: 1px solid #9FA8B7;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #9FA8B7;
+    color: white;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 80px;
+    justify-content: space-between;
+    padding: 10px 20px;
+   
+}
+/* Estilos para el logo */
+.logo img {
+    height: 50px;
+}
+
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav-links {
+    display: flex;
+    gap: 20px;
+    flex: 0 0 auto; 
+}
+
+/* Buscador centrado */
+.search-bar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar form {
+    display: flex;
+    align-items: center;
+    position: relative; 
+}
+
+.search-bar input[type="text"] {
+    width: 600px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid #C9D3DF;
+    border-radius: 20px; 
+    outline: none;
+    padding-right: 40px;
+}
+
+.search-bar .search-button {
+    position: absolute;
+    right: 10px;
+    background-color: #C9D3DF;
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 50%; 
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-bar .search-button:hover {
+    background-color: #9FA8B7;
+}
+
+
+
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex: 0 0 auto;
+    font-size: 24px;
+    color: #333;
+}
+
+
+/* Encabezado */
+
+nav {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    padding: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-links a:hover {
+    border-radius: 5px;
+    background-color: #C9D3DF;
+}
+
+
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    width: 100%;
+    max-width: 1200px; 
+    gap: 20px;
+}
+
+.logo {
+    flex: 0 0 auto; }
+
+.search-bar button {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    background-color: #C9D3DF;
+    color: #9FA8B7;
+}
+
+/* Iconos de notificación */
+.icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 24px;
+    color: #333;
+    margin-right: 40px; 
+}
+
+.icons i {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.category-bar {
+    display: flex;
+    background-color: #C9D3DF;
+    border-bottom: 1px solid #9FA8B7;
+    gap: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    z-index: 999;
+    
+}
+
+.category-bar .category {
+    padding: 8px 16px;
+    border-radius: 18px;
+    font-size: 14px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.3s;
+    background-color: #9FA8B7;
+    color: white;
+    border: 1px solid #C9D3DF;
+}
+
+.category-bar .category:hover {
+    background-color: #C9D3DF;
+    color: #333;
+}
+
+/* Pie de página */
+.footer-container {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 10px 20px; 
+    color: white;
+    background-color: #9FA8B7  ;
+}
+
+.contact-info {
+    margin-left: 100px;
+    flex: 1; 
+}
+
+.social-media {
+    margin-right: 100px; 
+    flex: 1; 
+}
+
+.footer-bottom {
+    text-align: center; 
+    margin-top: 10px; 
+}
+
+/*Redes sociales*/
+.social-media {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-media a {
+    color: #203543; 
+    font-size: 24px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-media a:hover {
+    color: white; /* Cambia el color de hover */
+}
+
+/*                pagina de ajustes            */
+
+/* Diseño general */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+header h1 {
+    margin: 0;
+    background-color: black;
+}
+
+
+
+/* Contenedor principal */
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Secciones de configuración */
+.config-section {
+    background-color: #ECE4E2;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.config-section h2 {
+    color: #203543;
+}
+
+/* Estilos de formulario */
+form label {
+    display: block;
+    margin-top: 10px;
+    color: #203543;
+}
+
+form input[type="text"],
+form input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #203543;
+    color: #E8E7E3;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #9FA8B7;
+}
+/* Contenedor principal */
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Secciones de configuraciÃ³n */
+.config-section {
+    background-color: #ECE4E2;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.config-section h2 {
+    color: #203543;
+}
+
+/* Estilos de formulario */
+form label {
+    display: block;
+    margin-top: 10px;
+    color: #203543;
+}
+
+form input[type="text"],
+form input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #203543;
+    color: #E8E7E3;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+button:hover {
+    background-color: #9FA8B7;
+}
+.container {
+    margin-top: 100px; 
+}
