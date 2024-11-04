@@ -139,7 +139,7 @@ nav {
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
     top: 0;
     left: 0;
-    margin-top: 124px; /* Para no superponer con el encabezado */
+    margin-top: 125px; /* Para no superponer con el encabezado */
 }
 .sidebar a {
     color: black;
@@ -157,10 +157,11 @@ nav {
 
 /* Contenido principal */
 .content {
-    margin-left: 220px; /* Espacio para la barra lateral */
+    margin-left: 210px; /* Espacio para la barra lateral */
     padding: 20px;
     text-align: center;
-    
+    display: flex;
+
 }
 
 /* Efecto para las tarjetas de libros */
@@ -197,8 +198,9 @@ nav {
     display: flex;
     justify-content: space-between; /* Distribuye el espacio entre los elementos */
     align-items: center; /* Alinea verticalmente los elementos en el centro */
-    padding: 10px 20px; 
-    background-color: #9FA8B7  ;
+    padding: 10px 450px; 
+    background-color: #9FA8B7;
+    position: absolute;
 }
 
 .contact-info {
