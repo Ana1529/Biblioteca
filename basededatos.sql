@@ -32,7 +32,7 @@ CREATE TABLE libros (
     editorial VARCHAR(100),
     anio_publicacion YEAR,
     isbn VARCHAR(20) UNIQUE,
-    imagen varchar(255) NULL;
+    imagen varchar(255) NULL,
     id_categoria INT,
     FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria)
 );
@@ -85,6 +85,17 @@ CREATE TABLE comentarios (
     FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario),
     FOREIGN KEY (id_libro) REFERENCES libros(id_libro)
 );
+CREATE TABLE pedidos (
+    id_pedido INT PRIMARY KEY AUTO_INCREMENT,
+    id_usuario INT NOT NULL,
+    nombre VARCHAR(100) NOT NULL,
+    correo VARCHAR(100) NOT NULL,
+    id_libro INT NOT NULL,
+    fecha_pedido DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario) ON DELETE CASCADE,
+    FOREIGN KEY (id_libro) REFERENCES libros(id_libro) ON DELETE CASCADE
+);
+
 ALTER TABLE usuarios MODIFY COLUMN contra VARCHAR(64);
 
 
