@@ -1,0 +1,86 @@
+/* Estilo general del cuerpo */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4; /* Color de fondo suave */
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal */
+.container {
+    width: 100%;
+    max-width: 500px; /* Ancho máximo del formulario */
+    margin: 50px auto; /* Centrado horizontal y margen superior */
+    padding: 20px;
+    background-color: white; /* Fondo blanco para el formulario */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Encabezado */
+h1 {
+    text-align: center; /* Centrar texto */
+    color: #333; /* Color del texto */
+}
+
+/* Estilo de los labels */
+label {
+    display: block; /* Hacer que los labels ocupen toda la línea */
+    margin: 15px 0 5px; /* Margen superior e inferior */
+    font-weight: bold; /* Texto en negrita */
+}
+
+/* Estilo de los inputs */
+input[type="password"],
+input[type="email"] {
+    width: 100%; /* Ancho completo */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 20px; /* Margen inferior */
+    border: 1px solid #ccc; /* Borde sutil */
+    border-radius: 4px; /* Bordes redondeados */
+    box-sizing: border-box; /* Incluye padding y border en el ancho */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+/* Estilo del botón de enviar */
+input[type="submit"] {
+    background-color: #007bff; /* Color de fondo azul */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    padding: 10px; /* Espaciado interno */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    font-size: 16px; /* Tamaño de fuente */
+    transition: background-color 0.3s; /* Transición suave para el color */
+}
+
+/* Efecto al pasar el ratón sobre el botón */
+input[type="submit"]:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el ratón */
+}
+
+/* Mensajes de error o éxito */
+.message {
+    margin-top: 20px;
+    text-align: center; /* Centrar texto */
+    color: #d9534f; /* Color rojo para errores */
+}
+
+/* Mensajes de éxito */
+.success {
+    color: #5cb85c; /* Color verde para éxitos */
+}
+
+/* Estilo para el enlace de volver */
+a {
+    text-decoration: none; /* Sin subrayado */
+    color: #007bff; /* Color azul */
+    display: block; /* Hace que el enlace ocupe toda la línea */
+    text-align: center; /* Centrar texto */
+    margin-top: 20px; /* Margen superior */
+}
+
+/* Efecto al pasar el ratón sobre el enlace */
+a:hover {
+    text-decoration: underline; /* Subrayar al pasar el ratón */
+}

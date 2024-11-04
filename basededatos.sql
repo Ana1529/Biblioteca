@@ -32,6 +32,7 @@ CREATE TABLE libros (
     editorial VARCHAR(100),
     anio_publicacion YEAR,
     isbn VARCHAR(20) UNIQUE,
+    imagen varchar(255) NULL;
     id_categoria INT,
     FOREIGN KEY (id_categoria) REFERENCES categorias(id_categoria)
 );

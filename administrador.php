@@ -19,15 +19,7 @@ if (!isset($_SESSION['usuario'])) {
 if ($_SESSION['usuario']['id_roles'] != 1) {
     die("Acceso denegado. Solo los administradores pueden acceder a esta página.");
 }
-
-// Función para manejar errores
-function handleError($stmt) {
-    return "Error: " . $stmt->error;
-}
-
-$conn->close();
 ?>
-
 
 <!DOCTYPE html>
 <html lang="es">
@@ -42,22 +34,26 @@ $conn->close();
         <!-- Barra lateral  -->
         <aside class="sidebar">
             <nav>
-                <center><h1>Mi Biblioteca</h1></center>
+                <a href="Pagina_principal.php"><center><h1>Mi Biblioteca</h1></center></a>
+                
                 <ul>
-                    <li><a href="#">Préstamos</a></li>
-                    <li><a href="#">Libros</a></li>
-                    <li><a href="#">Personas</a></li>
+                    <li><a href="gestionar_prestamos.php">Préstamos</a></li>
+                    <li><a href="libros_por_categoria.php">Libros</a></li>
+                    <li><a href="usuarios_registrados.php">Personas Registradas</a></li>
                 </ul>
             </nav>
+            <br>
+            <br>
+            <br>
+            <br><br><br><br>
+            <img src="imagenes/logoazul.jpg" alt="Usuario" style="width: 200px; height: 200px; border-radius: 50%; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); object-fit: cover;">
         </aside>
         <div class="main-content">
             <!-- Encabezado -->
             <header>
-                
                 <div class="user-notification">
                     <span>Administrador</span>
-                    <img src="IMG/usuario.png" alt="Usuario" class="icon" width="30" height="30">
-                    
+                    <img src="imagenes/logoazul.jpg" alt="Usuario" class="icon" width="30" height="30">
                 </div>
             </header>
 
@@ -67,17 +63,23 @@ $conn->close();
                 <br>
                 <br>
                 <div class="grid-container">
-                    <a href="usuarios_registrados.php">
-                        <div class="card">usuarios</div>
+                    <a href="registros_admin.php">
+                        <div class="card">Gestion de Usuarios</div>
                     </a>
-                    <div class="card" onclick="showSection('libros')">Libros</div>
-                    <div class="card" onclick="showSection('autor')">Autor</div>
-                    <div class="card" onclick="showSection('editorial')">Editorial</div>
-                    <a href="prestamos.php">
-                        <div class="card">Prestamos</div>
+                    <a href="gestion_libros.php">
+                        <div class="card">Gestion de Libros</div>
                     </a>
-                    <div class="card" onclick="showSection('devoluciones')">Devoluciones</div>
-                    <div class="card" onclick="showSection('multas')">Multas</div>
+                    
+                    <a href="categorias.php">
+                        <div class="card">Categorias</div>
+                    </a>
+                    <a href="gestionar_prestamos.php">
+                        <div class="card">Gestion de Prestamos</div>
+                    </a>
+                    <a href="devoluciones.php">
+                        <div class="card">Devoluciones</div>
+                    </a>
+                    
                     <a href="añadir_libro.php">
                         <div class="card">Añadir Libro</div>
                     </a>
@@ -85,8 +87,60 @@ $conn->close();
                         <div class="card">Borrar Libros</div>
                     </a>
                 </div>
+                <br><br>
+                <div class="prestamos">
+                    <h1>Pedidos de Préstamos</h1>
+                    
+                    <?php
+                    // Consultar los pedidos de préstamos
+                    $query_pedidos = "SELECT p.id_pedido, u.id_usuario, u.nombre AS nombre_usuario, 
+                                      b.titulo AS titulo_libro, b.anio_publicacion, b.autor, 
+                                      p.fecha_pedido
+                                      FROM pedidos p
+                                      JOIN usuarios u ON p.id_usuario = u.id_usuario
+                                      JOIN libros b ON p.id_libro = b.id_libro"; 
+
+                    $resultado_pedidos = $conn->query($query_pedidos);
+
+                    if ($resultado_pedidos === FALSE) {
+                        die("Error en la consulta: " . $conn->error);
+                    }
+                    ?>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID Pedido</th>
+                                <th>ID Usuario</th>
+                                <th>Nombre Usuario</th>
+                                <th>Título del Libro</th>
+                                <th>Año de Publicación</th>
+                                <th>Autor</th>
+                                <th>Fecha de Solicitud</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php while ($pedido = $resultado_pedidos->fetch_assoc()): ?>
+                                <tr>
+                                    <td><?php echo $pedido['id_pedido']; ?></td>
+                                    <td><?php echo htmlspecialchars($pedido['id_usuario']); ?></td>
+                                    <td><?php echo htmlspecialchars($pedido['nombre_usuario']); ?></td>
+                                    <td><?php echo htmlspecialchars($pedido['titulo_libro']); ?></td>
+                                    <td><?php echo htmlspecialchars($pedido['anio_publicacion']); ?></td>
+                                    <td><?php echo htmlspecialchars($pedido['autor']); ?></td>
+                                    <td><?php echo htmlspecialchars($pedido['fecha_pedido']); ?></td>
+                                </tr>
+                            <?php endwhile; ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 </body>
 </html>
+
+<?php
+// Cerrar la conexión
+$conn->close();
+?>

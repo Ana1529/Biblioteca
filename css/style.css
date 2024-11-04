@@ -1,4 +1,4 @@
-html, body {
+html, body { 
     height: 100%; /* Asegura que el body ocupe toda la altura */
     margin: 0; /* Elimina márgenes predeterminados */
     font-family: Arial, sans-serif; /* Fuente predeterminada */
@@ -41,6 +41,7 @@ html, body {
     display: block; /* Hace que el enlace ocupe todo el ancho */
     transition: background-color 0.3s; /* Transición suave para el fondo */
 }
+
 
 .sidebar nav ul li a:hover {
     background-color: #e8e7e3; /* Color de fondo al pasar el ratón */
@@ -113,7 +114,73 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-.card:hover {
-    transform: translateY(-5px); /* Efecto de elevación al pasar el ratón */
-    
+/* Estilo para los enlaces dentro de las tarjetas */
+.card a {
+    color: #000; /* Color del texto */
+    text-decoration: none; /* Elimina subrayado */
+    display: block; /* Hace que el enlace ocupe todo el ancho de la tarjeta */
+    padding: 10px; /* Espaciado interno para el enlace */
 }
+
+.card a:visited {
+    color: #000; /* Asegura que el color permanezca */
+}
+
+/* Estilos para el hover */
+.card a:hover {
+    background-color: rgba(0, 0, 0, 0.1); /* Color de fondo al pasar el ratón */
+}
+
+/* Para eliminar el subrayado de todos los enlaces en la página */
+a {
+    text-decoration: none; /* Elimina subrayado para todos los enlaces */
+    color: inherit; /* Hereda el color del texto del contenedor */
+}
+
+a:hover {
+    text-decoration: none; /* Asegúrate de que no haya subrayado en hover */
+}
+
+/* Contenedor principal */
+.prestamos {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff; /* Fondo blanco para el contenedor */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Encabezado */
+h1 {
+    text-align: left;
+    color: #9fa8b7; /* Color del encabezado */
+}
+
+/* Estilo de las tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #c9d3df; /* Borde de las celdas */
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #9fa8b7; /* Fondo del encabezado de la tabla */
+    color: white; /* Color del texto del encabezado */
+}
+
+tr:nth-child(even) {
+    background-color: #f5f5f5; /* Color de fila alterna */
+}
+
+tr:hover {
+    background-color: #e8e7e3; /* Color al pasar el ratón sobre la fila */
+}
+
+

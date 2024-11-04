@@ -1,0 +1,149 @@
+body, html {
+    margin: 0; /* Quita el margen predeterminado */
+    height: 100%; /* Hace que el body ocupe toda la altura de la ventana */
+    background-color: #ECE4E2; /* Fondo general */
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en una columna */
+    height: 100%; /* Hace que el contenedor ocupe toda la altura de la ventana */
+}
+
+.wrapper {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #C9D3DF; /* Color de fondo del wrapper */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    align-items: center; /* Alinea verticalmente los elementos */
+    padding: 10px; /* Añade un poco de espacio alrededor */
+    display: flex; /* Utiliza flexbox para alinear elementos en fila */
+    background: linear-gradient(to right, transparent 20%, #C9D3DF 90%); /* Color de fondo del encabezado */
+    color: #000; /* Color del texto */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra en la parte inferior */
+    font-size: 20px;
+}
+
+.user-notification {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el texto y la imagen */
+}
+
+.user-notification span {
+    margin-right: 8px; /* Espacio entre el texto y la imagen */
+}
+
+h1 {
+    color: #000; /* Color para el encabezado */
+    font-size: 20px; /* Tamaño de letra en píxeles */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Mensajes */
+p {
+    text-align: center;
+    color: #d9534f; /* Color para mensajes de error */
+}
+
+/* Formularios */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font: icon;
+}
+
+label {
+    font-weight: bold;
+}
+
+
+/* Estilos de entradas y botones */
+input[type="text"],
+input[type="date"],
+button {
+    padding: 10px;
+    border: 1px solid #9FA8B7; /* Color del borde */
+    border-radius: 5px;
+    font-size: 16px;
+    font: icon;
+}
+
+input[type="text"]:focus,
+input[type="date"]:focus {
+    border-color: #7a9b9f; /* Color de enfoque */
+    outline: none;
+}
+
+/* Tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font: icon;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #9FA8B7; /* Color del borde */
+    text-align: left;
+    font: caption;
+    font: icon;
+}
+
+th {
+    background-color: #E8E7E3; /* Color de fondo para el encabezado de la tabla */
+    color: #000;
+    font: icon;
+}
+
+tbody tr:hover {
+    background-color: #D0E8F2; /* Color de fondo al pasar el mouse sobre las filas */
+    color: black; /* Color del texto al pasar el mouse */
+}
+
+/* Estilos para el historial de devoluciones */
+h2 {
+    margin-top: 30px; /* Margen superior para separar el encabezado */
+    color: #333; /* Color del encabezado */
+}
+
+.historial-table {
+    margin-top: 20px;
+    border-radius: 5px;
+    overflow: hidden; /* Para bordes redondeados en la tabla */
+    font: icon;
+}
+
+.historial-table th {
+    background-color: #B2BEC3; /* Color de fondo del encabezado de la tabla de historial */
+    color: #fff; /* Color del texto en el encabezado */
+    font: icon;
+}
+
+.hidden {
+    display: none; /* Ocultar elementos */
+}
+
+button {
+    margin-left: 10px; /* Espaciado entre botones */
+    padding: 8px 12px; /* Relleno del botón */
+    background-color: #203543; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor de mano */
+    width: 200px;
+}
+
+button:hover {
+    background-color: #f8d7da; /* Color de fondo al pasar el mouse */
+    color: #000;
+}

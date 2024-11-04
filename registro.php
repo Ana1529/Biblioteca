@@ -97,7 +97,7 @@ $conn->close();
                             <p style="color:red;"><?php echo $error; ?></p>
                         <?php endif; ?>
                         <div class="buttons">
-                            <button type="submit">Registrar</button>
+                            <button type="button" onclick="window.location.href='Pagina_principal.php'">Registrar</button>
                             <button type="button" onclick="window.location.href='login.php'">Iniciar sesión</button>
                         </div>
                     </div>

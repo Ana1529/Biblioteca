@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <h1>Añadir Libro</h1>
             <div class="user-notification">
                 <span>Administrador</span>
-                <img src="IMG/usuario.png" alt="Usuario" class="icon" width="30" height="30">
+                <img src="imagenes/logoazul.jpg" alt="Usuario" class="icon" width="30" height="30">
             </div>
         </header>
 

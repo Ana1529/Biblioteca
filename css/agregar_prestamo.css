@@ -1,0 +1,75 @@
+* {
+    box-sizing: border-box; /* Asegura que el padding y el border no afecten el ancho total */
+    margin: 0; /* Elimina el margen predeterminado */
+    padding: 0; /* Elimina el padding predeterminado */
+}
+
+body, html {
+    height: 100%; /* Hace que el body ocupe toda la altura de la ventana */
+    font-family: Arial, sans-serif; /* Fuente general de la página */
+    background: linear-gradient(to right, #f0f0f0, #e0e0e0); /* Degradado de fondo */
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en columna */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    height: 100%; /* Hace que el contenedor ocupe toda la altura */
+    padding: 20px; /* Espaciado interno del contenedor */
+}
+
+h1 {
+    margin-bottom: 20px; /* Espacio debajo del encabezado */
+    color: #333; /* Color del texto del encabezado */
+}
+
+form {
+    background-color: #fff; /* Color de fondo del formulario */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra para darle profundidad */
+    padding: 20px; /* Espaciado interno del formulario */
+    width: 100%; /* Ancho del formulario */
+    max-width: 400px; /* Ancho máximo del formulario */
+}
+
+label {
+    display: block; /* Hace que los labels ocupen toda la línea */
+    margin-bottom: 5px; /* Espacio debajo del label */
+    font-weight: bold; /* Negrita para los labels */
+    color: #555; /* Color del texto del label */
+}
+
+input[type="text"],
+input[type="date"],
+input[type="number"],
+select {
+    width: 100%; /* Ancho completo del campo */
+    padding: 10px; /* Espaciado interno */
+    margin-bottom: 20px; /* Espacio debajo del campo */
+    border: 1px solid #ccc; /* Borde del campo */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 16px; /* Tamaño de fuente */
+}
+
+input[type="submit"],
+button {
+    background-color: #007BFF; /* Color de fondo del botón */
+    color: white; /* Color del texto del botón */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno del botón */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave para el fondo */
+    font-size: 16px; /* Tamaño de fuente del botón */
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background-color: #0056b3; /* Color al pasar el ratón sobre el botón */
+}
+
+.error {
+    color: red; /* Color para mensajes de error */
+    margin-bottom: 20px; /* Espacio debajo del mensaje de error */
+}

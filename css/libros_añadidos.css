@@ -21,9 +21,11 @@ header {
     display: flex; /* Utiliza flexbox para alinear elementos en fila */
     /* background-color: #C9D3DF; Color de fondo del encabezado */
     background: linear-gradient(to right, transparent 20%, #C9D3DF 90%); /* Color de fondo del encabezado */
-    color: white; /* Color del texto */
+    color: #000; /* Color del texto */
     box-shadow: 8px 0 10px rgba(0, 0, 0, 0.1);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra en la parte inferior */
+    font-size: 20px;
+
 }
 
 .user-notification {

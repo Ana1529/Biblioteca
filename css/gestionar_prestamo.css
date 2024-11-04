@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box; /* Asegura que el padding y el border no afecten el ancho total */
+}
+
+body, html {
+    margin: 0; /* Quita el margen predeterminado */
+    height: 100%; /* Hace que el body ocupe toda la altura de la ventana */
+}
+
+.conteiner {
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en una columna */
+    height: 100%; /* Hace que el contenedor ocupe toda la altura de la ventana */
+}
+
+header {
+    
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+    align-items: center; /* Alinea verticalmente los elementos */
+    padding: 10px; /* Añade un poco de espacio alrededor */ 
+    display: flex; /* Utiliza flexbox para alinear elementos en fila */
+    /* background-color: #C9D3DF; Color de fondo del encabezado */
+    background: linear-gradient(to right, transparent 20%, #C9D3DF 90%); /* Color de fondo del encabezado */
+    color: #000; /* Color del texto */
+    box-shadow: 8px 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra en la parte inferior */
+    font-size: 20px;
+
+}
+
+.user-notification {
+    display: flex;
+    align-items: center; /* Alinea verticalmente el texto y la imagen */
+}
+
+.user-notification span {
+    margin-right: 8px; /* Espacio entre el texto y la imagen */
+}
+
+h1{
+    color: #000;
+    font-size: 20px; /* Tamaño de letra en píxeles */
+}
+
+
+/* Estilo de las tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #c9d3df; /* Borde de las celdas */
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #9fa8b7; /* Fondo del encabezado de la tabla */
+    color: white; /* Color del texto del encabezado */
+}
+
+tr:nth-child(even) {
+    background-color: #f5f5f5; /* Color de fila alterna */
+}
+
+tr:hover {
+    background-color: #e8e7e3; /* Color al pasar el ratón sobre la fila */
+}
+
+/* Botones */
+button {
+    background-color: #9fa8b7; /* Color del botón */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px 0; /* Espaciado vertical */
+    width: 200px;
+
+}
+
+button:hover {
+    background-color: #c9d3df; /* Color de hover */
+}
+
+/* Estilo de enlaces */
+a {
+    color: #9fa8b7; /* Color de los enlaces */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline; /* Subrayar al pasar el ratón */
+}
