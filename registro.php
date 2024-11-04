@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['usuario'] = ['nombre' => $nombre, 'email' => $email, 'id_roles' => $rol];
             
             // Redirigir al perfil de cliente después del registro
-            header("Location: index.php");
+            header("Location: Pagina_principal.php");
             exit();
         } else {
             $error = "Error al registrar el usuario: " . $conn->error;
@@ -62,7 +62,7 @@ $conn->close();
 <body>
     <div class="container">
         <div class="welcome-section">
-        <img src="img/7.jpeg" alt="Bienvenido" class="welcome-image">
+        <img src="img/6.jpeg" alt="Bienvenido" class="welcome-image">
         </div>
         <div class="login-section">
             <center><h1>Registro</h1></center>

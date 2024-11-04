@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     header("Location: administrador.php");
                     exit();
                 case 3: // Cliente
-                    header("Location: index.php");
+                    header("Location: Pagina_principal.php");
                     exit();
                 default:
                     $error = "Rol desconocido.";
@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <div class="container">
         <div class="welcome-section">
-        <img src="img/7.jpeg" alt="Bienvenido" class="welcome-image">
+        <img src="img/6.jpeg" alt="Bienvenido" class="welcome-image">
         </div>
         <div class="login-section">
             <form action="login.php" method="POST">
