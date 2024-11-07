@@ -2,6 +2,7 @@ body, html {
     margin: 0; /* Quita el margen predeterminado */
     height: 100%; /* Hace que el body ocupe toda la altura de la ventana */
     background-color: #ECE4E2; /* Fondo general */
+
 }
 
 .container {

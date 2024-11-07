@@ -1,4 +1,4 @@
-<?php  
+<?php  //holllaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 session_start(); // Iniciar la sesión
 
 include 'conexion.php';
@@ -49,12 +49,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['prestar'])) {
     $stmt->bind_param("iiss", $id_usuario, $id_libro, $fecha_prestamo, $fecha_devolucion);
 
     if ($stmt->execute()) {
-        $_SESSION['mensaje'] = "Prestado con éxito.";
+        // El préstamo se registró con éxito, ahora eliminar el pedido
+        $stmt_delete = $conexion->prepare("DELETE FROM pedidos WHERE id_usuario = ? AND id_libro = ?");
+        $stmt_delete->bind_param("ii", $id_usuario, $id_libro);
+        
+        if ($stmt_delete->execute()) {
+            $_SESSION['mensaje'] = "Prestado con éxito y pedido eliminado.";
+        } else {
+            $_SESSION['mensaje'] = "Error al eliminar el pedido: " . $stmt_delete->error;
+        }
+        $stmt_delete->close();
     } else {
         $_SESSION['mensaje'] = "Error al prestar: " . $stmt->error;
     }
     $stmt->close();
 }
+
 
 // Consultar los préstamos
 $query_prestamos = "
