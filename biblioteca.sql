@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-11-2024 a las 22:26:22
--- Versión del servidor: 10.4.28-MariaDB
--- Versión de PHP: 8.2.4
+-- Tiempo de generación: 07-11-2024 a las 22:17:06
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -110,7 +110,18 @@ INSERT INTO `libros` (`id_libro`, `titulo`, `autor`, `editorial`, `anio_publicac
 (11, 'Borges, vida y literatura', 'Alejandro Vaccaro', 'emecé', '2015', '1', 'uploads/BIOGRAFIA.jpg', 20),
 (12, 'El Hobbit', 'J. R. R. Tolkien', 'minotauro', '1990', '2', 'uploads/HOBBIT.jpg', 23),
 (13, 'Cuentos de la Selva', 'Horacio Quiroga', 'lea', '1987', '3', 'uploads/CUENTOS.jpg', 22),
-(14, 'Frankestein', 'Mary Shelley', 'Alma Pocket', '1990', '5', 'uploads/FRANKESTEIN.jpg', 21);
+(14, 'Frankestein', 'Mary Shelley', 'Alma Pocket', '1990', '5', 'uploads/FRANKESTEIN.jpg', 21),
+(15, 'Alicia en el país de las maravillas', 'Lewis Carroll', 'Macmillan', '0000', '17', 'uploads/libro14.jpg', 22),
+(16, 'El diario de Anne Frank', 'Anne Frank', 'Libertador', '1944', '18', 'uploads/libro13.jpg', 20),
+(17, 'Don quijote de la mancha', 'Miguel de Cervantes ', 'Urbano Manini', '0000', '19', 'uploads/libro6.jpg', 23),
+(18, 'Rayuela', 'Julio Cortazar', 'Punto de Lector', '2006', '20', 'uploads/libro15.jpg', 23),
+(19, 'Orgullo y Prejuicio ', 'Jane Austen', 'Military Library', '0000', '21', 'uploads/libro3.jpg', 23),
+(20, 'El principito', 'Antoine de saint-Exupery', 'Editorial Sudamericana', '1951', '22', 'uploads/libro8.jpg', 22),
+(21, 'Matilda', 'Roald Dahl', 'Alfaguera', '1989', '23', 'uploads/libro9.jpg', 22),
+(22, 'La isla de los perdidos', 'Melissa de la cruz', 'Planeta Junior', '2015', '24', 'uploads/libro5.jpg', 23),
+(23, 'Matar al un ruiseñor', 'Harper Lee', 'HarperCollins', '2005', '25', 'uploads/libro1.jpg', 23),
+(24, 'Hamlet', 'William Shakespeare', 'N/A', '0000', '26', 'uploads/libro10.jpg', 23),
+(29, 'La guerra de los mundos', 'H.G. Wells', 'William Heinemann', '0000', '27', 'uploads/libro12.jpg', 23);
 
 -- --------------------------------------------------------
 
@@ -346,7 +357,7 @@ ALTER TABLE `devoluciones`
 -- AUTO_INCREMENT de la tabla `libros`
 --
 ALTER TABLE `libros`
-  MODIFY `id_libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_libro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT de la tabla `multas`
