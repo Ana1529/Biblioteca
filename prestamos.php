@@ -76,6 +76,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['registrar_prestamo']))
         <input type="text" id="bookTitle" name="bookTitle" required>
         
         <button type="submit" name="registrar_prestamo">Solicitar Préstamo</button>
+        <button type="button" onclick="window.location.href='Pagina_principal.php'">Volver</button>
+
     </form>
 
 </body>

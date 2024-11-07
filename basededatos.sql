@@ -96,6 +96,7 @@ CREATE TABLE pedidos (
     FOREIGN KEY (id_libro) REFERENCES libros(id_libro) ON DELETE CASCADE
 );
 
+
 ALTER TABLE usuarios MODIFY COLUMN contra VARCHAR(64);
 
 
