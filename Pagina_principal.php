@@ -103,8 +103,8 @@ $conexion->close();
         <div class="contact-info">
             <h3>Contáctanos</h3>
             <p><i class="fas fa-phone"></i> +123 456 7890</p>
-            <p><i class="fas fa-envelope"></i> contacto@mipagina.com</p>
-            <p><i class="fas fa-map-marker-alt"></i> Calle Falsa 123, Ciudad</p>
+            <p><i class="fas fa-envelope"></i>Bibliotecachicas@gmail.com</p>
+            <p><i class="fas fa-map-marker-alt"></i> Venezuela 1170, BS AS</p>
         </div>
         <div class="social-media">
             <h3>Síguenos</h3>
@@ -113,7 +113,7 @@ $conexion->close();
             <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
     </div> 
-    <p class="footer-bottom">&copy; 2024 Biblioteca Digital. Todos los derechos reservados.</p>
+    <p class="footer-bottom">&copy; 2024 Biblioteca Chicas. Todos los derechos reservados.</p>
 </footer>
 
 </body>

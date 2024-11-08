@@ -164,12 +164,12 @@ nav {
 
 }
 h1 {
-    text-align: center; /* Centra el título */
-    margin-bottom: 20px; /* Añade espacio debajo del título */
+    text-align: center;
+    margin-bottom: 20px; 
     font-family: Arial, sans-serif;
-    font-size: 2em; /* Tamaño adecuado para el título */
-    color: #333; /* Color del título */
-    font-weight: bold; /* Título en negrita */
+    font-size: 2em; 
+    color: #333; 
+    font-weight: bold; 
 }
 /* Efecto para las tarjetas de libros */
 .libros {
@@ -181,7 +181,7 @@ h1 {
 .libro {
     width: 200px;
     text-align: center;
-    transition: transform 0.3s ease; /* Transición suave para el efecto de movimiento */
+    transition: transform 0.3s ease; 
 }
 
 .libro:hover {
@@ -203,20 +203,20 @@ h1 {
 /* Pie de página */
 .footer-container {
     display: flex;
-    justify-content:space-around; /* Distribuye el espacio entre los elementos */
+    justify-content:space-around; 
     align-items:end; 
     padding: 10px 20px; 
     background-color: #9FA8B7  ;
 }
 
 .contact-info {
-    margin-left: 100px; /* Ajusta este valor según el espacio que desees */
+    margin-left: 100px; 
     flex: 1; 
 }
 
 .social-media {
-    margin-right: 100px; /* Ajusta este valor si necesitas más espacio a la derecha */
-    flex: 1; /* Para permitir que el espacio se distribuya mejor */
+    margin-right: 100px; 
+    flex: 1; 
 }
 
 .footer-bottom {
