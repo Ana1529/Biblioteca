@@ -163,7 +163,14 @@ nav {
     display: flex;
 
 }
-
+h1 {
+    text-align: center; /* Centra el título */
+    margin-bottom: 20px; /* Añade espacio debajo del título */
+    font-family: Arial, sans-serif;
+    font-size: 2em; /* Tamaño adecuado para el título */
+    color: #333; /* Color del título */
+    font-weight: bold; /* Título en negrita */
+}
 /* Efecto para las tarjetas de libros */
 .libros {
     display: flex;
@@ -196,11 +203,10 @@ nav {
 /* Pie de página */
 .footer-container {
     display: flex;
-    justify-content: space-between; /* Distribuye el espacio entre los elementos */
-    align-items: center; /* Alinea verticalmente los elementos en el centro */
-    padding: 10px 450px; 
-    background-color: #9FA8B7;
-    position: absolute;
+    justify-content:space-around; /* Distribuye el espacio entre los elementos */
+    align-items:end; 
+    padding: 10px 20px; 
+    background-color: #9FA8B7  ;
 }
 
 .contact-info {
@@ -235,6 +241,7 @@ nav {
 .social-media a:hover {
     color: white; /* Cambia el color de hover */
 }
+
 
 /*                pagina de ajustes            */
 
