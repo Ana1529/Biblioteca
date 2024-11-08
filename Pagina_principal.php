@@ -35,7 +35,7 @@ $conexion->close();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Préstamos de Libros</title>
+    <title>Biblioteca</title>
     <link rel="stylesheet" href="CSS/pagina_principal.css">
     <script src="java.js" defer></script> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -85,8 +85,8 @@ $conexion->close();
 
     <!-- Contenido principal -->
     <main class="content">
-        <h1> Libros</h1>
-        <div class="libros">
+        <h1> Libros</h1><br>
+        <br><div class="libros">
             <?php foreach ($libros as $libro): ?>
                 <div class="libro">
                     <img src="<?php echo htmlspecialchars($libro['imagen']); ?>" alt="<?php echo htmlspecialchars($libro['titulo']); ?>">
